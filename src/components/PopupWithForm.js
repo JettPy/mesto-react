@@ -1,15 +1,15 @@
 import React from 'react';
 
-function PopupWithForm(props) {
+function PopupWithForm({ title, name, isOpen, buttonText, onClose, children }) {
   return (
-    <div className={`popup popup_type_${props.name} ${props.isOpen && "popup_opened"}`} >
+    <div className={`popup popup_type_${name} ${isOpen && "popup_opened"}`} >
       <div className="popup__content dialog-window">
-        <button className="button button_type_close" aria-label="Закрыть" type="button" onClick={props.onClose}></button>
-        <h2 className="popup__title">{props.title}</h2>
+        <button className="button button_type_close" aria-label="Закрыть" type="button" onClick={onClose}></button>
+        <h2 className="popup__title">{title}</h2>
         <form className="popup__form" name="avatar" noValidate>
           <fieldset className="popup__set">
-            {props.children}
-            <button className="button popup__button" aria-label="Сохранить" type="submit">Сохранить</button>
+            {children}
+            <button className="button popup__button" aria-label={buttonText} type="submit">Сохранить</button>
           </fieldset>
         </form>
       </div>
