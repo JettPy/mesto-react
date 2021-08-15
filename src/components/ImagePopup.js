@@ -1,6 +1,7 @@
 import React from 'react';
 
 function ImagePopup({ card, name, isOpen, onClose }) {
+  
   return(
     <div className={`popup popup_type_${name} ${isOpen && "popup_opened"}`} >
       <figure className="popup__figure dialog-window">
